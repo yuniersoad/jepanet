@@ -51,6 +51,12 @@ public class NetworkTest {
          net.AddLink(new Link("P1", "C1", "C2"));
      }
      
+     @Test(expected = IllegalElementInsertion.class)
+     public void insertLinkNotExistNodes() throws IllegalElementInsertion
+     {
+         net.AddLink(new Link("P1", "C1", "C2"));         
+     }
+     
      @Test
      public void insertLinks() throws IllegalElementInsertion {
          net.AddNode(new Node("C1"));
