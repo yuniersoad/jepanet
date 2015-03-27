@@ -4,7 +4,7 @@ import com.jepanet.model.Network;
 import com.jepanet.model.elements.Link;
 import com.jepanet.model.elements.Node;
 import com.jepanet.model.exceptions.IllegalElementInsertion;
-import org.junit.After;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -64,6 +64,14 @@ public class NetworkTest {
          
          net.AddLink(new Link("P1", "C1", "C2"));
          assertEquals(1, net.getLinkCount()); 
+         
+         List<Link> outgoingFromC1 = net.outgoingLinksForNode("C1");
+         assertEquals(1, outgoingFromC1.size());
+         
+         List<Link> incomingToC2 = net.incomingLinksForNode("C2");
+         assertEquals(1, incomingToC2.size());
+         
+         assertSame(outgoingFromC1.get(0), incomingToC2.get(0));
      }
      
      @Test
