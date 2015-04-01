@@ -1,6 +1,6 @@
 package com.jepanet.model.elements;
 
-public class Link extends Element {
+public abstract class Link extends Element {
     
     private String startNodeId;
     private String endNodeId;
