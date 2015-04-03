@@ -11,6 +11,9 @@ import java.util.Map;
 
 public class Network {
     
+    private String title;
+    private final List<String> notes;
+    
     final private Map<String, Node> nodes;
     
     final private Map<String, Link> links;
@@ -24,6 +27,29 @@ public class Network {
         links = new HashMap<>();
         outAdj = new HashMap<>();
         inAdj = new HashMap<>();
+        notes = new ArrayList<>();
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public void clearNotes()
+    {
+        notes.clear();
+    }
+            
+    public void addNote(String note){
+        notes.add(note);
+    }
+    
+    public List<String> getNotes()
+    {
+        return notes;
     }
     
     public int getNodeCount(){
@@ -107,5 +133,4 @@ public class Network {
         
             
     }
-    
 }
