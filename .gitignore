@@ -1,3 +1,2 @@
-/model/nbproject/private/
-/model/dist/
-/model/build/
+model/target/
+model/nb-configuration.xml

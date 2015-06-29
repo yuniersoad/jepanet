@@ -1,4 +1,4 @@
-package com.jepanet.test;
+package com.jepanet.model.test;
 
 import com.jepanet.model.elements.Element;
 import com.jepanet.model.elements.Junction;
