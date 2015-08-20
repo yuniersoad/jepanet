@@ -90,6 +90,10 @@ public class Network {
             throw  new IllegalElementInsertion();
     }
     
+    public Node getNode(String nodeId){
+        return nodes.getOrDefault(nodeId, null);            
+    }
+    
     public List<Link> outgoingLinksForNode(String nodeId) {
         return getLinksInAdj(nodeId, outAdj);        
     }    
