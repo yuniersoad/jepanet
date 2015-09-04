@@ -164,6 +164,7 @@ public class INPReader {
 
     private void readJunctionData(Network net) throws IllegalElementInsertion {
         Junction j = new Junction(tokenList.get(0));
+        j.setElevation(Double.parseDouble(tokenList.get(1)));
         net.AddNode(j);
     }
 

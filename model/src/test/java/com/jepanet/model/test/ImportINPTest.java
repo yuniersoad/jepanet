@@ -40,6 +40,16 @@ public class ImportINPTest {
          
          assertThat(j2, instanceOf(Junction.class));
     }
+    
+    @Test
+    public void tuto1EpanetElevation() throws IOException, FileNotFoundException, IllegalElementInsertion {
+        Network net = networkFromInp("test_data/tutorial1epanet.inp");
+        Node j2 = net.getNode("2");
+        Node j8 = net.getNode("8");
+        
+        assertThat(j2.getElevation(), is(0.5));
+        assertThat(j8.getElevation(), is(17.0));
+    }
 
     private Network networkFromInp(String path) throws IOException, FileNotFoundException, IllegalElementInsertion {
         INPReader r = new INPReader(path);
